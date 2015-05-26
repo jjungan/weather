@@ -15,20 +15,13 @@
 		</div>
 		<div id="wrapper">
 			<div id="content">
-				<div id="site-introduction">
-					<c:if test="${!empty sessionScope.authMember.name }">
-					<h2>안녕하세요.  
-					${sessionScope.authMember.name }의  MYSITE에 오신 것을 환영합니다.</h2>
-					</c:if>
-					<c:if test="${empty sessionScope.authMember.name }">
-					<h2>안녕하세요. MYSITE에 오신 것을 환영합니다.</h2>
-					</c:if>
-					<p>
-						이 사이트는  웹 프로그램밍 실습과제 예제 사이트입니다.<br>
-						메뉴는  사이트 소개, 방명록, 게시판이 있구요. JAVA 수업 + 데이터베이스 수업 + 웹프로그래밍 수업 배운 거 있는거 없는 거 다 합쳐서
-						만들어 놓은 사이트 입니다.<br><br>
-					</p>
-				</div>
+				<form id="login-form" name="loginform" method="post" action="/weather/member/login">
+					<label class="block-label" for="email">이메일</label>
+					<input id="email" name="email" type="text" value="">
+					<label class="block-label" >패스워드</label>
+					<input name="password" type="password" value="">
+					<input type="submit" value="로그인" class="btn">
+				</form>
 			</div>
 		</div>
 		<div id="footer">

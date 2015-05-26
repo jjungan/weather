@@ -6,9 +6,6 @@
 	color: rgb(33, 33, 179);
 	padding-left: 15px;
 }
-#navigation li{
-	text-align: center;
-}
 
 #site-introduction				{ padding:20px;	width:540px; }
 #site-introduction img#profile	{ display:block; float:left }
