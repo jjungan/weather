@@ -76,8 +76,7 @@
 	function getWeather(){
 		$.ajax({
 			type: "GET",
-			dataType: 'xml',
-			url: "http://www.kma.go.kr/wid/queryDFS.jsp?gridx="+sourceX+"&gridy="+sourceY,
+			url: "test_proxy.jsp?sourceX="+sourceX+"&sourceY"+sourceY,
 			success: function(response){
 				console.log(response);
 			},
