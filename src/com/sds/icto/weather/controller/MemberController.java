@@ -73,5 +73,26 @@ public class MemberController {
 		return map;
 	}
 	
+	@RequestMapping(value="/myinfo", method=RequestMethod.GET)
+	public String update(){
+		return "member/myinfo";
+	}
+	
+	@RequestMapping(value="/myinfo", method=RequestMethod.POST)
+	public String update(MemberVo vo, HttpSession session){
+		MemberVo authMember = (MemberVo)session.getAttribute("authMember");
+		if(authMember == null){
+			return "redirect:/index";
+		}
+		vo.setEmail(authMember.getEmail());
+		memberService.modifyMember(vo);
+		//session에 있는 authMember도 업데이트.
+		MemberVo authMember2 = memberService.authMember(vo);
+		session.removeAttribute("authMember");
+		session.setAttribute("authMember", authMember2);
+		
+		return "redirect:/index";
+	}
+
 	
 }

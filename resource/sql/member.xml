@@ -6,13 +6,13 @@
 	<insert id="insert" parameterClass="MemberVo">
 		<![CDATA[
 			insert into member 
-			values(#email#, #password#, #name#, #location#)
+			values(#email#, #password#, #name#, #gender#, #location#)
 		]]> 
 	</insert>
 	
 	<update id="update" parameterClass="MemberVo">
 		<![CDATA[
-			update member set name=#name#, password=#password# where email = #email#
+			update member set name=#name#, password=#password#, gender=#gender# where email = #email#
 		]]> 
 	</update>
 	
