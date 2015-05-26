@@ -6,7 +6,7 @@
 	<insert id="insert" parameterClass="MemberVo">
 		<![CDATA[
 			insert into member 
-			values(NO_SEQ.nextval, #email#, #password#, #name#, #location#)
+			values(#email#, #password#, #name#, #location#)
 		]]> 
 	</insert>
 	

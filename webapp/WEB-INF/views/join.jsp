@@ -8,7 +8,7 @@
 <title>weather</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link href="/weather/assets/css/user.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="/weather/assets/js/jquery/jquery-1.9.0.js"></script>
+<script type="text/javascript" src="/weather/assets/jquery/jquery-1.9.0.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#join-form").submit(function(){
@@ -62,7 +62,7 @@ $(document).ready(function(){
 		<div id="content">
 			<div id="user">
 
-				<form id="join-form" name="joinForm" method="post" action="/mysite3/member/join">
+				<form id="join-form" name="joinForm" method="post" action="/weather/member/join">
 					<label class="block-label" for="name">이름</label>
 					<input id="name" name="name" type="text" value="">
 
