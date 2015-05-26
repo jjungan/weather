@@ -10,47 +10,51 @@
 <link href="/weather/assets/css/user.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="/weather/assets/jquery/jquery-1.9.0.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-	$("#join-form").submit(function(){
-		if($("#check-btn").is(":visible") == true){
-			alert("이메일 중복여부를 확인해주세요.");
-			return false;
-		}
-		return true;
-	});
-	
-	$("#email").change(function(){
-		$("#check-img").hide();
-		$("#check-btn").show();
-	})
-	
-	$("#check-btn").click(function(){
-		var email="email="+$("#email").val();
-		if(email == ""){
-			alert("이메일을 입력해주세요.");
-			return;
-		}
-		console.log(email);
-		$.ajax({
-			url : "/weather/member/checkemail",
-			type : "post",
-			data : email,
-			success : function(map){
-				if(map.result == true){
-					$("#check-img").show();
-					$("#check-btn").hide();
-				}else if(map.result == false ){
-					alert(map.msg);
+	$(document).ready(function(){
+		$("#submitBtn").click(function(){
+			var email = $("#email").val();
+			$.ajax({
+				method: "POST",
+				url: "/weather/member/checkemail",
+				data: { "email": email},
+				success: function(response){
+					if(response.flag){
+						$("#join-form").submit();
+					}else{
+						$("#o-img").hide();
+						$("#x-img").show();
+						alert("중복된 아이디가 있습니다!");
+						return;
+					}
+				},
+				error: function(){
+					alert("error");
+					return;
 				}
-			}
+			});
 		});
-			
+		$("#email").change(function(){
+			var email = $(this).val();
+			$.ajax({
+				method: "POST",
+				url: "/weather/member/checkemail",
+				data: { "email": email},
+				success: function(response){
+					if(response.flag){
+						$("#o-img").show();
+						$("#x-img").hide();
+					}else{
+						$("#o-img").hide();
+						$("#x-img").show();
+					}
+				},
+				error: function(){
+					alert("error");
+				}
+			}); 
+		});
 		
-	})
-	
-	
-})
-
+	});
 </script>
 </head>
 <body>
@@ -68,8 +72,10 @@ $(document).ready(function(){
 
 					<label class="block-label" for="email">이메일</label>
 					<input id="email" name="email" type="text" value="">
-					<img id="check-img" src="/weather/assets/images/check.png" style="width:15px; display:none;">
-					<input id="check-btn" type="button" value="중복체크">
+					<div id="imgs">
+						<img src="/mysite3/assets/images/o.gif" id="o-img">
+						<img src="/mysite3/assets/images/x.png" id="x-img">
+					</div>
 					
 					<label class="block-label">패스워드</label>
 					<input name="password" type="password" value="" required="required">
@@ -86,7 +92,7 @@ $(document).ready(function(){
 						<label>서비스 약관에 동의합니다.</label>
 					</fieldset> -->
 					
-					<input type="submit" value="가입하기" class="btn">
+					<input type="button" id="submitBtn" value="가입하기" class="btn">
 					
 				</form>
 			</div>
