@@ -12,6 +12,11 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#submitBtn").click(function(){
+			/* null체크 */
+			if($("#email").val()=="" || $("#name").val()=="" || $("#password").val()==""){
+				alert("*은 필수 입력사항입니다.");
+				return;
+			}
 			var email = $("#email").val();
 			$.ajax({
 				method: "POST",
@@ -67,17 +72,17 @@
 			<div id="user">
 
 				<form id="join-form" name="joinForm" method="post" action="/weather/member/join">
-					<label class="block-label" for="name">이름</label>
-					<input id="name" name="name" type="text" value="">
+					<label class="block-label" for="name">이름*</label>
+					<input id="name" name="name" type="text" autofocus="autofocus">
 
-					<label class="block-label" for="email">이메일</label>
-					<input id="email" name="email" type="text" value="">
+					<label class="block-label" for="email">이메일*</label>
+					<input id="email" name="email" type="text">
 					<div id="imgs">
-						<img src="/mysite3/assets/images/o.gif" id="o-img">
-						<img src="/mysite3/assets/images/x.png" id="x-img">
+						<img src="/weather/assets/images/o.gif" id="o-img">
+						<img src="/weather/assets/images/x.png" id="x-img">
 					</div>
 					
-					<label class="block-label">패스워드</label>
+					<label class="block-label">패스워드*</label>
 					<input name="password" type="password" value="" required="required">
 					
 					<fieldset>
@@ -85,12 +90,7 @@
 						<label>여</label> <input type="radio" name="gender" value="female" checked="checked">
 						<label>남</label> <input type="radio" name="gender" value="male">
 					</fieldset>
-					
-					<!-- <fieldset>
-						<legend>약관동의</legend>
-						<input id="agree-prov" type="checkbox" name="agreeProv" value="y">
-						<label>서비스 약관에 동의합니다.</label>
-					</fieldset> -->
+
 					
 					<input type="button" id="submitBtn" value="가입하기" class="btn">
 					
