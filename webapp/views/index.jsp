@@ -3,14 +3,14 @@
 <!doctype html>
 <html>
 <head>
-<title>mysite</title>
+<title>weather</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link href="/weather/assets/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="container">
 		<div id="header">
-			<c:import url="/weather/views/include/header.jsp"></c:import>
+			<c:import url="/views/include/header.jsp"></c:import>
 		</div>
 		<div id="wrapper">
 			<div id="content">
@@ -30,13 +30,8 @@
 				</div>
 			</div>
 		</div>
-		<div id="navigation">
-			<c:import url="/weather/views/include/navigation.jsp">
-				<c:param name="type" value="main"></c:param>
-			</c:import>
-		</div>
 		<div id="footer">
-			<c:import url="/weather/views/include/footer.jsp"></c:import>
+			<c:import url="/views/include/footer.jsp"></c:import>
 		</div>
 	</div>
 </body>
