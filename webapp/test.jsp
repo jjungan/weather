@@ -9,10 +9,9 @@
 	src="/weather/assets/jquery/jquery-1.9.0.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <script type="text/javascript">
+	var sourceX;
+	var sourceY;
 	$(document).ready(function() {
-		/*날씨 알아오기*/
-		$.ajax()
-		
 		/* 내 현재위치를 찍어주는 소스. 근데 PC에서는 안정확 ㅜㅜ */
 		if (navigator.geolocation) {   //geolocation 을 사용할수 있는 HTML5 인지 확인
 			navigator.geolocation.getCurrentPosition(function(pos){  	//현재 위치값 얻기
@@ -39,11 +38,12 @@
 		               console.log(results);    //<< 이부분!!!
 		               //alert('고객님은 현재 ' + results[2].formatted_address + '에 접속중이십니다.');
 		               myAddress = results[2].formatted_address;
-						sourceX = results[2].geometry.location.A;
-						sourceY = results[2].geometry.location.F;
+						sourceX = Math.round(results[2].geometry.location.A);
+						sourceY = Math.round(results[2].geometry.location.F);
 						console.log(myAddress);
 						console.log(sourceX);
 						console.log(sourceY);
+						getWeather();
 		               } 
 		           });
 		        }
@@ -69,9 +69,24 @@
 		  map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
 		  
 		}
-						
+	 	/*날씨 알아오기*/
+			
 
 	})
+	function getWeather(){
+		$.ajax({
+			type: "GET",
+			dataType: 'xml',
+			url: "http://www.kma.go.kr/wid/queryDFS.jsp?gridx="+sourceX+"&gridy="+sourceY,
+			success: function(response){
+				console.log(response);
+			},
+			error: function(){
+				alert("error");
+				return;
+			}
+		});
+ 	}
 </script>
 </head>
 <body>
