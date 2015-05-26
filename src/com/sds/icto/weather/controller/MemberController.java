@@ -18,12 +18,8 @@ public class MemberController {
 	
 	@Autowired
 	MemberService memberService;
-	
-	
-	
-	
-	
-	/* joinform으로 가는 메서드2 */
+ 
+	/* joinform으로 가는 메서드 */
 	@RequestMapping(value="/join",method=RequestMethod.GET)
 	public String joinForm(){
 		System.out.println(1);
