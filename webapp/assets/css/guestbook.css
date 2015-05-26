@@ -1,0 +1,112 @@
+@CHARSET "UTF-8";
+@import "mysite.css";
+
+#guestbook {
+	margin: 20px auto;
+	width: 540px;
+}
+
+#guestbook table th {
+	border: 1px solid #aaa;
+	background-color: #888;
+	color: #fff;
+	text-align: center;
+	padding: 7px 10px;
+}
+
+#guestbook table tr {
+	background-color: #f5f5f5;
+}
+
+#guestbook table td {
+	color: #888;
+	cursor: pointer;
+		border: 1px solid #aaa;
+}
+#guestbook #submitBtn{
+	margin-top: 10px;
+	margin-bottom: 40px;
+	text-align: center;
+}
+#guestbook #submitBtn input[type=submit]{
+	padding: 5px 15px;
+}
+
+#guestbook table {
+	width: 100%;
+	border-collapse: collapse;
+}
+#guestbook #listTable .indexTd, #guestbook #listTable .deleteTd{
+	width:25px;
+	text-align: center;
+} 
+#guestbook #listTable .deleteTd a img{
+	width:17px;
+} 
+#guestbook #listTable .indexTd{
+	background-color: #888;
+	color: #fff;
+}
+table td input[type=text], table td input[type=password] {
+	border: 1px solid #f5f5f5;
+	background-color: #f5f5f5;
+}
+#guestbook  #textareaTd{
+	background-color: #fff;
+}
+
+#guestbook table, #guestbook table td {
+	padding: 5px
+}
+
+#guestbook ul {
+	width: 100%;
+	margin-top: 20px
+}
+
+#guestbook ul li {
+	width: 100%;
+	margin-top: 10px
+}
+
+#guestbook.delete-form {
+	text-align: center;
+	height: 200px
+}
+
+#guestbook.delete-form a {
+	display: block;
+	margin: 20px auto;
+}
+
+#guestbook.delete-message p {
+	padding: 100px;
+	height: 50px;
+	text-align: center
+}
+
+#guestbook textarea#content {
+	width: 100%;
+	border: none;
+	height: 100px;
+	resize: none;
+	outline: none;
+
+}
+#guestbook #listTable .messageTd{
+	background-color: #fff;
+}
+
+
+
+#deleteform input[type=image]{
+	width:15px;
+	margin-left: 3px;
+}
+
+#deleteform{
+	margin-top: 50px;
+	text-align: center;
+}
+
+

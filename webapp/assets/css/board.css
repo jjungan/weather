@@ -1,0 +1,138 @@
+@CHARSET "UTF-8";
+
+@import "mysite.css";
+
+#board {
+	margin: 20px auto;
+	width: 540px;
+}
+
+#board #listTable th, #board #listTable td {
+	border: 1px solid #fff;
+	padding: 5px;
+}
+
+#board #listTable th{
+	background-color: #888;
+	color: #fff;
+	text-align: center;
+	
+}
+#board #listTable tr{
+	background-color: #f5f5f5;
+}
+#board #listTable td{
+	color: #888;
+	cursor: pointer;
+}
+
+#board #listTable {
+	width: 100%;
+	border-collapse: collapse;
+}
+#board .regDateTd {
+	width: 75px;
+}
+#board .hitTd {
+	width: 30px;
+}
+#board .indexTd {
+	width: 30px;
+}
+#write{
+	text-align: center;
+	margin: 10px;
+}
+
+#writeBtn{
+	padding: 3px 15px;
+}
+
+#searchTable{
+	width: 540px; 
+	margin-bottom: 5px;
+}
+#searchTable td{
+	text-align: right;
+}
+#searchTable input{
+	padding: 3px 15px;
+}
+
+
+/* insertform */
+
+#content #insertTable{
+	border-collapse: collapse;
+	width: 540px;
+	margin: 15px;
+}
+#content #insertTable th{
+	background-color: #aaa;
+	height: 30px;
+	color: #fff;
+	width:70px;
+	text-align: center;
+}
+
+#insertTable td input[type=text], #insertTable td input[type=password]{
+	border: 1px solid #fff;
+}
+#insertTable #submitTd{
+	text-align: center;
+}
+#insertTable #submitBtn{
+	padding: 2px 20px;
+	margin: 20px 0 0 0;
+	font-family: '맑은 고딕';
+	
+}
+#insertTable #nameTd, #insertTable #titleTd, #insertTable #viewCntTd,#insertTable #passwordTd{
+	border: 1px solid #aaa;
+}
+#insertTable #title, #insertTable #name, #insertTable #viewCnt, #insertTable #password{
+	width: 92%;
+	padding-left: 5px;
+	font: 1em '맑은 고딕', 돋움, 굴림;
+}
+#insertTable #textarea{
+	width: 95%;
+	border: 1px solid #fff;
+	height:250px;
+	font-family: '맑은 고딕';
+	padding: 10px;
+}
+#insertTable #textareaTd{
+	border:1px solid #aaa;
+}
+
+/* updateform */
+#insertTable #updateBtn, #insertTable #deleteBtn{
+	padding: 2px 20px;
+	margin: 20px 0 0 0;
+	font-family: '맑은 고딕';
+	
+}
+/* view */
+#insertTable #listBtn{
+	padding: 2px 20px;
+	margin: 20px 0 0 0;
+	font-family: '맑은 고딕';
+	
+}
+/* inserterror */
+#wrongPassword{
+	width:100%;
+	text-align: center;
+	color: rgb(231, 108, 127);	
+	margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+@import "mysite.css";
+
+#user		{ margin:20px auto;	width:540px; }
+#join-form	{
+	width:240px;
+	padding:10px;
+	border:1px solid #666;
+	border-radius: 10px;
+	margin:50px auto;
+}
+
+label.block-label					{ display:block }
+label.block-label, fieldset			{ margin:5px 0 3px 0 }
+label.block-label, fieldset legend	{ margin-bottom:3px }
+
+fieldset				{ border:none }
+input[type="submit"]	{ display:block; width:80px; margin:20px auto;  padding: 3px; font-family: '맑은 고딕';}
+input[type="button"]	{ display:block; width:80px; margin:20px auto;  padding: 3px; font-family: '맑은 고딕';}
+
+#login-form	{
+	width:160px;
+	padding:10px;
+	border:1px solid #666;
+	border-radius: 10px;
+	margin:50px auto;
+	text-align: center;
+}
+#login-form input{
+	width: 150px;
+	height: 20px;
+}
+#login-form input[type=submit]{
+	padding: 3px 0;
+	height: 25px;
+}
+#login-form label{
+	text-align: left;
+	margin-left: 5px;
+}
+#imgs {
+	vertical-align: middle;
+	width: 25px;
+	display: inline-block;
+	height: 22px;
+}
+#o-img{
+	display:none;
+	width: 18px;
+}
+#x-img{
+	width: 18px;
+}
+
+#user p		{ text-align:center; padding:10px}
+
+#user p.jr-success	{ height:200px }
+
+#formDiv{
+	margin-left: 32px;
+}
