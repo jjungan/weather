@@ -59,7 +59,7 @@
 		  var mapOptions = {
 		    zoom: 13,
 		    center: new google.maps.LatLng(37.5010226, 127.0396037)
-		  };
+		  }; 
 		  map = new google.maps.Map(document.getElementById('map-canvas'),
 		      mapOptions);
 
