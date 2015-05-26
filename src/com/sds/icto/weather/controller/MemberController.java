@@ -22,6 +22,7 @@ public class MemberController {
 	/* joinform으로 가는 메서드 */
 	@RequestMapping(value="/join",method=RequestMethod.GET)
 	public String joinForm(){
+		System.out.println(1);
 		return "member/joinform";
 	}
 
