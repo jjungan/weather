@@ -22,20 +22,19 @@ public class MemberController {
 	/* joinform으로 가는 메서드 */
 	@RequestMapping(value="/join",method=RequestMethod.GET)
 	public String joinForm(){
-		System.out.println(1);
-		return "member/joinform";
+		return "join";
 	}
 
 	/* member insert를 위한 메서드 */
 	@RequestMapping(value="/join",method=RequestMethod.POST)
 	public String join(@ModelAttribute MemberVo vo){
 		memberService.joinMember(vo);
-		return "member/joinsuccess";
+		return "joinsuccess";
 	}
 	
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public String loginForm(){
-		return "member/loginform";
+		return "login";
 	}
 
 	@RequestMapping(value="/login",method=RequestMethod.POST)

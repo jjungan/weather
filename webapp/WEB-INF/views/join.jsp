@@ -56,7 +56,7 @@ $(document).ready(function(){
 <body>
 	<div id="container">
 		<div id="header">
-		<c:import url="/views/include/header.jsp">
+		<c:import url="/WEB-INF/views/include/header.jsp">
 		</c:import>
 		</div>
 		<div id="content">
@@ -92,7 +92,7 @@ $(document).ready(function(){
 			</div>
 		</div>
 		<div id="footer">
-			<c:import url="/views/include/footer.jsp">
+			<c:import url="/WEB-INF/views/include/footer.jsp">
 			</c:import>
 		</div>
 	</div>
