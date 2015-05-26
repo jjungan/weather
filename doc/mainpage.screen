@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="64" y="64" width="641" height="449" text="How's the weather today?&#xA;http://localhost:8088/weather/" measuredWidth="641" measuredHeight="449">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="6" x="123" y="258" width="257" height="193" measuredWidth="257" measuredHeight="193"/>
+  <widgets xsi:type="model:Image" id="7" x="395" y="258" width="117" height="93" measuredWidth="117" measuredHeight="93"/>
+  <widgets xsi:type="model:Image" id="8" x="526" y="258" width="117" height="93" measuredWidth="117" measuredHeight="93"/>
+  <widgets xsi:type="model:Image" id="9" x="395" y="357" width="117" height="93" measuredWidth="117" measuredHeight="93"/>
+  <widgets xsi:type="model:Image" id="10" x="526" y="357" width="117" height="93" measuredWidth="117" measuredHeight="93"/>
+  <widgets xsi:type="model:VScrollbar" id="11" x="688" y="116" height="397" measuredWidth="17" measuredHeight="397"/>
+  <widgets xsi:type="model:Icon" id="14" x="608" y="144" measuredWidth="32" measuredHeight="32" icon="user (large)"/>
+  <widgets xsi:type="model:Label" id="15" x="539" y="148" text="weather 님" measuredWidth="64" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="16" x="131" y="202" text="오늘의 날씨" measuredWidth="70" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="17" x="203" y="198" measuredWidth="32" measuredHeight="32" icon="cloud (large)"/>
+  <widgets xsi:type="model:Tooltip" id="20" x="234" y="159" text="날씨정보파싱&#xD;&#xA;" measuredWidth="83" measuredHeight="40">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:ButtonBar" id="23" x="267" y="200" text="전체하늘보기, 내하늘보기" measuredWidth="176" measuredHeight="27" selection="0">
+    <font/>
+    <items x="0" y="0" width="94" height="27" text="전체하늘보기"/>
+    <items x="94" y="0" width="82" height="27" text="내하늘보기"/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="31" x="526" y="202" width="117" text="날씨" measuredWidth="117" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="35" x="344" y="416" width="25" height="25" measuredWidth="25" measuredHeight="25" icon="heart (large)"/>
+  <widgets xsi:type="model:Icon" id="36" x="480" y="320" width="25" height="25" measuredWidth="25" measuredHeight="25" icon="heart (large)"/>
+  <widgets xsi:type="model:Icon" id="37" x="613" y="320" width="25" height="25" measuredWidth="25" measuredHeight="25" icon="heart (large)"/>
+  <widgets xsi:type="model:Icon" id="38" x="482" y="420" width="25" height="25" measuredWidth="25" measuredHeight="25" icon="heart (large)"/>
+  <widgets xsi:type="model:Icon" id="39" x="615" y="420" width="25" height="25" measuredWidth="25" measuredHeight="25" icon="heart (large)"/>
+  <widgets xsi:type="model:HSplitter" id="46" x="64" y="502" width="625" measuredWidth="625" measuredHeight="11"/>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

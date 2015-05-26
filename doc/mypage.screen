@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="7" x="64" y="64" width="641" height="465" text="How's the weather today?&#xA;http://localhost:8088/weather/" measuredWidth="641" measuredHeight="465">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:ButtonBar" id="6" x="264" y="200" text="내하늘보기, 전체하늘보기" measuredWidth="176" measuredHeight="27" selection="0">
+    <font/>
+    <items x="0" y="0" width="82" height="27" text="내하늘보기"/>
+    <items x="82" y="0" width="94" height="27" text="전체하늘보기"/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="8" x="123" y="248" width="257" height="193" measuredWidth="257" measuredHeight="193"/>
+  <widgets xsi:type="model:Icon" id="9" x="608" y="144" measuredWidth="32" measuredHeight="32" icon="user (large)"/>
+  <widgets xsi:type="model:Label" id="10" x="539" y="148" text="weather 님" measuredWidth="64" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="11" x="131" y="202" text="오늘의 날씨" measuredWidth="70" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="12" x="203" y="198" measuredWidth="32" measuredHeight="32" icon="cloud (large)"/>
+  <widgets xsi:type="model:Image" id="14" x="395" y="248" width="117" height="93" measuredWidth="117" measuredHeight="93"/>
+  <widgets xsi:type="model:Image" id="15" x="526" y="248" width="117" height="93" measuredWidth="117" measuredHeight="93"/>
+  <widgets xsi:type="model:Button" id="16" x="352" y="469" text="사진올리기" measuredWidth="80" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="19" x="526" y="202" width="117" text="계절" measuredWidth="117" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:HSplitter" id="20" x="64" y="517" width="625" measuredWidth="625" measuredHeight="11"/>
+  <widgets xsi:type="model:VScrollbar" id="21" x="688" y="116" height="412" measuredWidth="17" measuredHeight="412"/>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

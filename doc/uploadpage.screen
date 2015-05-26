@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="60" y="48" width="697" height="481" text="How's the weather today?&#xA;http://localhost:8088/weather/" measuredWidth="697" measuredHeight="481">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="2" x="336" y="447" width="97" height="28" text="사진올리기" measuredWidth="97" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="8" x="668" y="134" width="33" height="33" measuredWidth="33" measuredHeight="33" icon="user (custom)"/>
+  <widgets xsi:type="model:Label" id="9" x="588" y="139" width="81" text="weather 님" measuredWidth="81" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:VScrollbar" id="17" x="740" y="100" height="429" measuredWidth="17" measuredHeight="429"/>
+  <widgets xsi:type="model:Image" id="18" x="124" y="202" width="329" height="225" measuredWidth="329" measuredHeight="225"/>
+  <widgets xsi:type="model:Label" id="19" x="116" y="139" width="81" text="오늘의 날씨" measuredWidth="81" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="20" x="188" y="134" width="33" height="33" measuredWidth="33" measuredHeight="33" icon="cloud (custom)"/>
+  <widgets xsi:type="model:ButtonBar" id="21" x="244" y="139" width="185" height="28" text="전체하늘보기, 내하늘보기" measuredWidth="185" measuredHeight="28" selection="0">
+    <font/>
+    <items x="0" y="0" width="97" height="28" text="전체하늘보기"/>
+    <items x="97" y="0" width="88" height="28" text="내하늘보기"/>
+  </widgets>
+  <widgets xsi:type="model:Hotspot" id="22" x="482" y="191" width="209" height="297" measuredWidth="209" measuredHeight="297"/>
+  <widgets xsi:type="model:List" id="4" x="500" y="216" width="73" height="73" text="() 해&#xA;( ) 비&#xA;(o) 구름&#xA;" measuredWidth="73" measuredHeight="73" border="false" alpha="0">
+    <font/>
+    <items x="0" y="2" width="73" height="22" text="() 해"/>
+    <items x="0" y="24" width="73" height="22" text="( ) 비"/>
+    <items x="0" y="46" width="73" height="22" text="(o) 구름"/>
+  </widgets>
+  <widgets xsi:type="model:List" id="5" x="500" y="336" width="105" height="49" text="() 봄&#xA;(o) 여름&#xA;" measuredWidth="105" measuredHeight="49" border="false" alpha="0">
+    <font/>
+    <items x="0" y="2" width="105" height="22" text="() 봄"/>
+    <items x="0" y="24" width="105" height="22" text="(o) 여름"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="10" x="500" y="194" width="129" text="오늘의 날씨는?" measuredWidth="129" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="11" x="500" y="314" width="113" text="계절은 무엇인가요?" measuredWidth="113" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="12" x="500" y="406" width="113" text="지금은 몇시?" measuredWidth="113" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:List" id="13" x="500" y="428" width="137" height="63" text="(o) 낮(6:00~18:00)&#xA;( ) 밤(18:00~6:00)&#xA;" measuredWidth="137" measuredHeight="63" border="false" alpha="0">
+    <font/>
+    <items x="0" y="2" width="137" height="22" text="(o) 낮(6:00~18:00)"/>
+    <items x="0" y="24" width="137" height="22" text="( ) 밤(18:00~6:00)"/>
+  </widgets>
+  <widgets xsi:type="model:List" id="15" x="604" y="216" width="73" height="73" text="() 안개&#xA;() 눈&#xA;() 기타" measuredWidth="73" measuredHeight="73" border="false" alpha="0">
+    <font/>
+    <items x="0" y="2" width="73" height="22" text="() 안개"/>
+    <items x="0" y="24" width="73" height="22" text="() 눈"/>
+    <items x="0" y="46" width="73" height="22" text="() 기타"/>
+  </widgets>
+  <widgets xsi:type="model:List" id="16" x="604" y="336" width="105" height="49" text="( ) 가을&#xA;() 겨울&#xA;" measuredWidth="105" measuredHeight="49" border="false" alpha="0">
+    <font/>
+    <items x="0" y="2" width="105" height="22" text="( ) 가을"/>
+    <items x="0" y="24" width="105" height="22" text="() 겨울"/>
+  </widgets>
+  <widgets xsi:type="model:ButtonBar" id="25" x="133" y="447" width="181" height="28" text="파일찾기,       cloud.jpg          " measuredWidth="181" measuredHeight="28" selection="0">
+    <font/>
+    <items x="0" y="0" width="70" height="28" text="파일찾기"/>
+    <items x="70" y="0" width="111" height="28" text="      cloud.jpg          "/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
