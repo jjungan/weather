@@ -119,7 +119,7 @@ function setHashtag(arr){
 		</div>
 		<div id="content">
 			<div id="picture-insert">
-				<form id="insert-form" name="insertForm" method="post" enctype="multipart/form-data" action="/weather/picture/insert">
+				<form id="insert-form" name="insertForm" method="post" action="/weather/picture/insert" enctype="multipart/form-data">
 					<table id="insert-table">
 						<tr>
 							<td colspan="2" rowspan="8" id="picture-td">
@@ -161,11 +161,11 @@ function setHashtag(arr){
 							<td colspan="2" class="question">사진에 코멘트를 달아주세요.</td>
 						</tr>
 						<tr>
-							<td colspan="2" class="answer"><textarea></textarea></td>
+							<td colspan="2" class="answer"><textarea name="content"></textarea></td>
 						</tr>
 						<tr>
 							<td id="file-td">
-								<input type="file" name="image" id="image">
+								<input type="file" name="file" id="image">
 							</td>
 							<td id="submit-td">
 								<input type="submit" value="사진올리기">

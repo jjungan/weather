@@ -18,7 +18,7 @@ public class PictureDao {
 		return sqlMapClientTemplate.queryForList("picture.selectList");
 	}
 	public void insert(PictureVo vo){
-		sqlMapClientTemplate.insert("picture.insert");
+		sqlMapClientTemplate.insert("picture.insert",vo);
 	}
 
 }

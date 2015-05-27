@@ -35,6 +35,7 @@ public class WeatherController {
 			weatherService.modifyWeather(vo);
 		}
 		WeatherVo weatherDB = weatherService.getWeatherByEmail(member.getEmail());
+		session.setAttribute("weather", weatherDB);
 		return weatherDB;
 	}
 	

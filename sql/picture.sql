@@ -36,6 +36,10 @@ insert into picture
 values(picture_no_seq.nextval, '123', '등대', 'Lighthouse.jpg', '등대가 보이는 바다, 그리고 하늘!', null, '여름', null, null, sysdate, 0);
 commit;
 
+insert into picture
+values(picture_no_seq.nextval, '123', null, '201542744430374.jpg', '#해 #여름 #낮 #서울하늘', 
+'낮', '여름', '해', null, sysdate, 0);
+
 delete from picture;
 
 select * from picture;
