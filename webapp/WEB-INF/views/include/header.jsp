@@ -4,7 +4,7 @@
 	<ul>
 		<li class="left">오늘의 날씨</li>
 		<li class="left">
-			<c:if>
+			<c:if test="">
 			</c:if>
 			<img src="/weather/assets/images/user.png" style="width:20px; margin-left:5px;"></li>
 		<li class="left"><a href="/weather/picture/list">전체하늘</a></li>
