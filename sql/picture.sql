@@ -41,5 +41,5 @@ values(picture_no_seq.nextval, '123', null, '201542744430374.jpg', '#해 #여름
 '낮', '여름', '해', null, sysdate, 0);
 
 delete from picture;
-
+commit;
 select * from picture;
