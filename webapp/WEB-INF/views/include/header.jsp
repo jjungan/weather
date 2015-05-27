@@ -3,7 +3,10 @@
 	<h1><a href="/weather/">HOW'S THE WEATHER TODAY?</a></h1>
 	<ul>
 		<li class="left">오늘의 날씨</li>
-		<li class="left"><img src="/weather/assets/images/user.png" style="width:20px; margin-left:5px;"></li>
+		<li class="left">
+			<c:if>
+			</c:if>
+			<img src="/weather/assets/images/user.png" style="width:20px; margin-left:5px;"></li>
 		<li class="left"><a href="/weather/picture/list">전체하늘</a></li>
 		<li class="left"><a href="/weather/picture/mylist">내하늘</a></li>
 	

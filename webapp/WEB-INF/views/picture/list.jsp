@@ -26,6 +26,7 @@ li{
 <script type="text/javascript" src="/weather/assets/jquery/jquery-1.9.0.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
+		/*이미지 마우스오버시 메뉴*/
 		$(".like").hide();
 		$("img.first, img.remain").mouseover(function(){
 			$(this).hide();
@@ -36,6 +37,10 @@ li{
 			$(this).hide();
 			$(this).prev().show();
 		})
+		/*이미지 뷰어-모달*/
+		$(".like").dialog({
+			  modal: true
+		});
 	})
 
 
