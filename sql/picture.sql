@@ -39,3 +39,5 @@ commit;
 delete from picture;
 
 select * from picture;
+
+select * from picture where content like '%busan%' order by likes desc

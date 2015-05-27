@@ -30,7 +30,7 @@
 	
 	<select id="selectByKeyword" parameterClass="String" resultClass="PictureVo">
 		<![CDATA[
-			select * from picture where content like '%#content#%' order by likes desc
+			select * from picture where content like '%$content$%' order by likes desc
 		]]>
 	</select>
 	

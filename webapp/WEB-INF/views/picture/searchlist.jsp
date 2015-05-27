@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,17 +20,8 @@
 	width:284px;
 	height:213px;
 }
-.remain-li{
+li{
 	float:left;
-	margin:0;
-	width:284px;
-	height:213px;
-}
-.first-li{
-	float:left;
-	margin:0;
-	width:568px;
-	height:426px;
 }
 
 .modal-image{
@@ -43,14 +35,14 @@
 	border-radius: 10px;
 	display:none;
 }
-/* .like{
+.like{
 	text-align:center;
 }
 .view-table{
 	text-align:center;
 	padding: 50px;
 	font-style: italic;
-} */
+}
 </style>
 <script type="text/javascript" src="/weather/assets/jquery/jquery-1.9.0.js"></script>
 
@@ -58,16 +50,16 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		/*이미지 마우스오버시 메뉴*/
-		$(".like").css("display","none");
-		$(".modal-target").css("display","none");
+		$(".like").hide();
+		$(".modal-target").hide();
 		$("img.first, img.remain").mouseover(function(){
-			$(this).css("display","none");
-			$(this).next().css("display","inline-block");
+			$(this).hide();
+			$(this).next().show();
 		})
 		
 		$("div.first.like, div.remain.like").mouseout(function(){
-			$(this).css("display","none");
-			$(this).prev().css("display","inline-block");
+			$(this).hide();
+			$(this).prev().show();
 		})
 		/*이미지 뷰어 bpopup*/
 		$(".like").click(function(){
@@ -100,18 +92,6 @@
 			var keyword=$("#searchform").val();
 			location.href="/weather/picture/search?keyword="+keyword;
 			
-			/* $.ajax({
-				method: "POST",
-				url: "/weather/picture/search",
-				data: keyword,
-				success: function(response){
-					console.log("인서트성공");
-				},
-				error: function(){
-					alert("error");
-					return;
-				}
-			}); */
 		})
 	})
 
@@ -133,38 +113,44 @@
 					<c:forEach items="${list }" var="pictureVo" varStatus="status">
 					<c:choose>
 					<c:when test="${status.index == '0' }">
-					<li class="first-li">
+					<li>
 						<img class="first" src="/weather/assets/images/tempimages/${pictureVo.image }">
 						<div class="first like">
 							<input type="hidden" value="${pictureVo.no }">
 							<table class="view-table">
 							<tr><td>${pictureVo.email }</td></tr>
 							<tr><td>${pictureVo.content }</td></tr>
+							<tr><td>${pictureVo.season }</td></tr>
+							<tr><td>${pictureVo.weather }</td></tr>
 							<tr><td>${pictureVo.location}</td></tr>
+							<tr><td>${pictureVo.time }</td></tr>
 							<tr><td class="likeBtn">좋아요<img src="/weather/assets/images/user.png" style="width:10px;">${pictureVo.likes }</td></tr>
 							</table>
 						</div>
 						<!-- modal -->
 						<div class="place_popup" id="view-image${pictureVo.no }" title="Basic dialog">
-							<img class="modal-image" src="c:\\temp\${pictureVo.image }">
+							<img class="modal-image" src="/weather/assets/images/tempimages/${pictureVo.image }">
 						</div>
 					</li>
 					</c:when>
 					<c:otherwise>
-					<li class="remain-li">
+					<li>
 						<img class="remain" src="/weather/assets/images/tempimages/${pictureVo.image }">
 						<div class="remain like">
 							<input type="hidden" value="${pictureVo.no }">
 							<table class="view-table">
 							<tr><td>${pictureVo.email }</td></tr>
 							<tr><td>${pictureVo.content }</td></tr>
+							<tr><td>${pictureVo.season }</td></tr>
+							<tr><td>${pictureVo.weather }</td></tr>
 							<tr><td>${pictureVo.location}</td></tr>
+							<tr><td>${pictureVo.time }</td></tr>
 							<tr><td>좋아요<img src="/weather/assets/images/user.png" style="width:10px;">${pictureVo.likes }</td></tr>
 							</table>
 						</div>
 						<!-- modal -->
 						<div class="place_popup" id="view-image${pictureVo.no }" title="Basic dialog">
-							<img class="modal-image" src="c:\\temp\${pictureVo.image }">
+							<img class="modal-image" src="/weather/assets/images/tempimages/${pictureVo.image }">
 						</div>
 					</li>					
 					</c:otherwise>

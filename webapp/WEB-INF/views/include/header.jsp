@@ -17,7 +17,7 @@
 				<input id="searchform" name="searchform" type="text" placeholder="검색하세요">
 			</li>
 			<li class="left">
-				<img id="searchbtn" src="/weather/assets/images/user.png" style="width:20px; margin-left:5px;">
+				<img id="searchbtn" src="/weather/assets/images/search.png" style="width:15px; margin-left:5px;">
 			</li>
 		</c:if>
 	

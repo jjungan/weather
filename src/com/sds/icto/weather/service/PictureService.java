@@ -20,5 +20,8 @@ public class PictureService {
 	public void add(PictureVo vo){
 		pictureDao.insert(vo);
 	}
+	public List<PictureVo> searchByKeyword(String keyword) {
+		return pictureDao.selectByKeyword(keyword);
+	}
 
 }
