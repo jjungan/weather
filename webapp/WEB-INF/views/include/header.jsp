@@ -1,6 +1,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-	<h1><a href="/weather/">HOW'S THE WEATHER TODAY?</a></h1>
+	<h1><a href="/weather/index">HOW'S THE WEATHER TODAY?</a></h1>
 	<ul>
 		<li class="left">오늘의 날씨</li>
 		<li class="left">
