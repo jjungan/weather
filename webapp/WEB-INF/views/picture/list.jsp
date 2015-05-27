@@ -133,7 +133,7 @@
 					<c:choose>
 					<c:when test="${status.index == '0' }">
 					<li class="first-li">
-						<img class="first" src="/weather/assets/images/tempimages/${pictureVo.image }">
+						<img class="first" src="/weather/image/${pictureVo.image }">
 						<div class="first like">
 							<input type="hidden" value="${pictureVo.no }">
 							<table class="view-table">
@@ -145,13 +145,13 @@
 						</div>
 						<!-- modal -->
 						<div class="place_popup" id="view-image${pictureVo.no }" title="Basic dialog">
-							<img class="modal-image" src="c:\\temp\${pictureVo.image }">
+							<img class="modal-image" src="/weather/image/${pictureVo.image }">
 						</div>
 					</li>
 					</c:when>
 					<c:otherwise>
 					<li class="remain-li">
-						<img class="remain" src="/weather/assets/images/tempimages/${pictureVo.image }">
+						<img class="remain" src="/weather/image/${pictureVo.image }">
 						<div class="remain like">
 							<input type="hidden" value="${pictureVo.no }">
 							<table class="view-table">
@@ -163,7 +163,7 @@
 						</div>
 						<!-- modal -->
 						<div class="place_popup" id="view-image${pictureVo.no }" title="Basic dialog">
-							<img class="modal-image" src="c:\\temp\${pictureVo.image }">
+							<img class="modal-image" src="/weather/image/${pictureVo.image }">
 						</div>
 					</li>					
 					</c:otherwise>
