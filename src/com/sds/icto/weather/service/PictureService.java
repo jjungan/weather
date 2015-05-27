@@ -17,5 +17,8 @@ public class PictureService {
 	public List<PictureVo> getList() {
 		return pictureDao.selectList();
 	}
+	public void add(PictureVo vo){
+		pictureDao.insert(vo);
+	}
 
 }

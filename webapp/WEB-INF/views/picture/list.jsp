@@ -9,7 +9,8 @@
 <link href="/weather/assets/css/main.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 .like{
-	background-color: #e4e4e4;
+	background-color: #999;
+	opacity: 0.6;
 }
 .first{
 	width:568px;
