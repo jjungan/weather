@@ -32,8 +32,14 @@
 	.question{
 		font-size: 1.5em;
 	}
-	.radio-td{
+	.answer{
 		vertical-align: top;
+	}
+	.answer textarea{
+		width: 95%;
+		height: 50px;
+		margin-bottom: -20px;
+		
 	}
 </style>
 <script type="text/javascript" src="/weather/assets/jquery/jquery-1.9.0.js"></script>
@@ -60,9 +66,48 @@ $(document).ready(function(){
          //alert(this.value); //선택한 이미지 경로 표시
          readURL(this);
      });
-	
+     
+     $("textarea").click(function(){
+    	 var weather = $(":input:radio[name=weather]:checked").val();
+    	 var season =  $(":input:radio[name=season]:checked").val();
+    	 var time = $(":input:radio[name=time]:checked").val();
+    	 if($("textarea").text() == ''){
+	    	 
+	    	 $("textarea").append("#"+weather+" ");
+	    	 $("textarea").append("#"+season+" ");
+	    	 $("textarea").append("#"+time+" ");
+    		 
+    	 }
+     });
+     
+     var arr = {};
+     $(":input:radio[name=weather]").change(function(){
+    	 arr.weather = $(this).val();
+    	 setHashtag(arr);
+     });
+     $(":input:radio[name=season]").change(function(){
+    	 arr.season = $(this).val();
+    	 setHashtag(arr);
+     });
+     $(":input:radio[name=time]").change(function(){
+    	 arr.time = $(this).val();
+    	 setHashtag(arr);
+     });
 	
 });
+
+function setHashtag(arr){
+	$("textarea").text("");
+	if(arr.weather != null){
+   	 	$("textarea").append("#"+arr.weather+" ");
+	}
+	if(arr.season != null){
+   	 	$("textarea").append("#"+arr.season+" ");
+	}
+	if(arr.time != null){
+   	 	$("textarea").append("#"+arr.time+" ");
+	}
+}
 
 </script>
 <title>Insert title here</title>
@@ -74,43 +119,49 @@ $(document).ready(function(){
 		</div>
 		<div id="content">
 			<div id="picture-insert">
-				<form id="insert-form" name="insertForm" method="post" action="/weather/picture/insert">
+				<form id="insert-form" name="insertForm" method="post" enctype="multipart/form-data" action="/weather/picture/insert">
 					<table id="insert-table">
 						<tr>
-							<td colspan="2" rowspan="6" id="picture-td">
+							<td colspan="2" rowspan="8" id="picture-td">
 						        <img id="preview" src="/weather/assets/images/placeholder.gif" alt="your image" />
 							</td>
 							<td colspan="2" id="weather-td" class="question">오늘의 날씨는?</td>
 						</tr>
 						<tr>
-							<td colspan="2" class="radio-td">
-								<input type="radio" name="climate">해 
-								<input type="radio" name="climate">비 
-								<input type="radio" name="climate">구름 
-								<input type="radio" name="climate">안개 
-								<input type="radio" name="climate">눈 
-								<input type="radio" name="climate">기타 
+							<td colspan="2" class="answer">
+								<input type="radio" name="weather" value="해">해 
+								<input type="radio" name="weather" value="비">비 
+								<input type="radio" name="weather" value="구름">구름 
+								<input type="radio" name="weather" value="안개">안개 
+								<input type="radio" name="weather" value="눈">눈 
+								<input type="radio" name="weather" value="기타">기타 
 							</td>
 						</tr>
 						<tr>
 							<td colspan="2" class="question">계절은 무엇인가요?</td>
 						</tr>
 						<tr>
-							<td colspan="2" class="radio-td">
-								<input type="radio" name="season">봄 
-								<input type="radio" name="season">여름 
-								<input type="radio" name="season">가을 
-								<input type="radio" name="season">겨울 
+							<td colspan="2" class="answer">
+								<input type="radio" name="season" value="봄">봄 
+								<input type="radio" name="season" value="여름">여름 
+								<input type="radio" name="season" value="가을">가을 
+								<input type="radio" name="season" value="겨울">겨울 
 							</td>
 						</tr>
 						<tr>
 							<td colspan="2" class="question">지금은 몇시?</td>
 						</tr>
 						<tr>
-							<td colspan="2" class="radio-td">
-								<input type="radio" name="time">낮(6:00 ~ 18:00) 
-								<input type="radio" name="time">밤(18:00 ~ 6:00) 
+							<td colspan="2" class="answer">
+								<input type="radio" name="time" value="낮">낮(6:00 ~ 18:00) 
+								<input type="radio" name="time" value="밤">밤(18:00 ~ 6:00) 
 							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="question">사진에 코멘트를 달아주세요.</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="answer"><textarea></textarea></td>
 						</tr>
 						<tr>
 							<td id="file-td">
