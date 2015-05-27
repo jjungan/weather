@@ -31,6 +31,9 @@ insert into picture(no, title, image)
 values(picture_no_seq.nextval, 'koala', 'Koala.jpg');
 insert into picture(no, title, image) 
 values(picture_no_seq.nextval, 'desert', 'Desert.jpg');
+
+insert into picture
+values(picture_no_seq.nextval, '123', '등대', 'Lighthouse.jpg', '등대가 보이는 바다, 그리고 하늘!', null, '여름', null, null, sysdate, 0);
 commit;
 
 select * from picture;
