@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="picture">
+	<typeAlias alias="PictureVo" type="com.sds.icto.weather.domain.PictureVo" />
+	
+	<select id="selectList" resultClass="PictureVo">
+		<![CDATA[
+			select * from picture
+		]]> 
+	</select>	
+
+
+</sqlMap>

@@ -16,4 +16,21 @@ CREATE TABLE  "PICTURE"
 	 CONSTRAINT "PICTURE_PK" PRIMARY KEY ("NO") ENABLE, 
 	 CONSTRAINT "PICTURE_FK" FOREIGN KEY ("EMAIL")
 	  REFERENCES  "MEMBER" ("EMAIL") ENABLE
-   )
+   );
+   
+CREATE SEQUENCE   "PICTURE_NO_SEQ"  
+MINVALUE 1 
+MAXVALUE 9999999999999999 
+INCREMENT BY 1 
+START WITH 1 
+NOCACHE  
+NOORDER  
+NOCYCLE;
+
+insert into picture(no, title, image) 
+values(picture_no_seq.nextval, 'koala', 'Koala.jpg');
+insert into picture(no, title, image) 
+values(picture_no_seq.nextval, 'desert', 'Desert.jpg');
+commit;
+
+select * from picture;
