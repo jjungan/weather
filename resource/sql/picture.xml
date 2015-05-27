@@ -18,7 +18,10 @@
 	<insert id="insert" parameterClass="PictureVo">
 		<![CDATA[
 			insert into picture
-			values(picture_no_seq.nextval, #email#, null, #image#, #content#, #time#, #season#, #weather#, #location#, sysdate, 0);
+			values(
+				picture_no_seq.nextval, #email#, null, #image#, #content#, #time#, 
+				#season#, #weather#, #location#, sysdate, 0
+			)
 		]]> 	
 	</insert>
 	
