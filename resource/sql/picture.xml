@@ -5,9 +5,34 @@
 	
 	<select id="selectList" resultClass="PictureVo">
 		<![CDATA[
-			select * from picture
+			select * from picture order by likes desc
 		]]> 
-	</select>	
+	</select>
 
+	<select id="selectMyList" resultClass="PictureVo" parameterClass="String">
+		<![CDATA[
+			select * from picture where email=#email# order by likes desc
+		]]> 
+	</select>
 
+	<insert id="insert" parameterClass="PictureVo">
+		<![CDATA[
+			insert into picture
+			values(picture_no_seq.nextval, #email#, null, #image#, #content#, #time#, #season#, #weather#, #location#, sysdate, 0);
+		]]> 	
+	</insert>
+	
+	<update id="updateLike" parameterClass="PictureVo">
+		<![CDATA[
+			update picture set like=like + 1 where no=#no#
+		]]> 
+	</update>
+	
+	<select id="selectByKeyword" parameterClass="String" resultClass="PictureVo">
+		<![CDATA[
+			select * from picture where content like '%#content#%' order by likes desc
+		]]>
+	</select>
+	
+	
 </sqlMap>

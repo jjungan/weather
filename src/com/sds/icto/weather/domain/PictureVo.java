@@ -3,7 +3,7 @@ package com.sds.icto.weather.domain;
 import java.sql.Date;
 
 public class PictureVo {
-	private Long no;
+	private long no;
 	private String email;
 	private String title;
 	private String image;
@@ -13,11 +13,11 @@ public class PictureVo {
 	private String weather;
 	private String location;
 	private Date regdate;
-	private String likes;
-	public Long getNo() {
+	private int likes;
+	public long getNo() {
 		return no;
 	}
-	public void setNo(Long no) {
+	public void setNo(long no) {
 		this.no = no;
 	}
 	public String getEmail() {
@@ -74,10 +74,10 @@ public class PictureVo {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
-	public String getLikes() {
+	public int getLikes() {
 		return likes;
 	}
-	public void setLikes(String likes) {
+	public void setLikes(int likes) {
 		this.likes = likes;
 	}
 	@Override
@@ -88,5 +88,7 @@ public class PictureVo {
 				+ ", location=" + location + ", regdate=" + regdate
 				+ ", likes=" + likes + "]";
 	}
+	
+	
 	
 }

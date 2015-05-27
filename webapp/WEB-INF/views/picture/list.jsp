@@ -38,7 +38,9 @@ li{
 	text-align:center;
 }
 .view-table{
-	padding: 20px; auto;
+	text-align:center;
+	padding: 50px;
+	font-style: italic;
 }
 </style>
 <script type="text/javascript" src="/weather/assets/jquery/jquery-1.9.0.js"></script>
@@ -58,12 +60,47 @@ li{
 			$(this).hide();
 			$(this).prev().show();
 		})
-		/*이미지 뷰어-모달*/
+		/*이미지 뷰어 bpopup*/
 		$(".like").click(function(){
 			/* console.log($(this).children().val());
 			$("#view-image"+no).dialog(); */
 			var no=$(this).children().val();
 			$("#view-image"+no).bPopup();
+		})
+		
+		/*좋아요 누르기*/
+		$(".likeBtn").click(function(){
+			$.ajax({
+				method: "POST",
+				url: "/weather/picture/like",
+				data: {
+					
+					},
+				success: function(response){
+					console.log("인서트성공");
+				},
+				error: function(){
+					alert("error");
+					return;
+				}
+			});
+		})
+		
+		/*검색버튼*/
+		$("#searchbtn").click(function(){
+			var keyword=$("#searchform").val();
+			$.ajax({
+				method: "POST",
+				url: "/weather/picture/search",
+				data: keyword,
+				success: function(response){
+					console.log("인서트성공");
+				},
+				error: function(){
+					alert("error");
+					return;
+				}
+			});
 		})
 	})
 
@@ -74,7 +111,9 @@ li{
 <body>
 	<div id="container">
 		<div id="header">
-			<c:import url="/WEB-INF/views/include/header.jsp"></c:import>
+			<c:import url="/WEB-INF/views/include/header.jsp">
+				<c:param name="type" value="picture"></c:param>
+			</c:import>
 		</div>
 		<div id="wrapper">
 			<div id="content">
@@ -88,14 +127,13 @@ li{
 						<div class="first like">
 							<input type="hidden" value="${pictureVo.no }">
 							<table class="view-table">
-							<tr><td>title</td><td>${pictureVo.title }</td></tr>
-							<tr><td>writer</td><td>${pictureVo.email }</td></tr>
-							<tr><td>content</td><td>${pictureVo.content }</td></tr>
-							<tr><td>season</td><td>${pictureVo.season }</td></tr>
-							<tr><td>weather</td><td>${pictureVo.weather }</td></tr>
-							<tr><td>location</td><td>${pictureVo.location}</td></tr>
-							<tr><td>time</td><td>${pictureVo.time }</td></tr>
-							<tr><td>likes</td><td>${pictureVo.likes }</td></tr>
+							<tr><td>${pictureVo.email }</td></tr>
+							<tr><td>${pictureVo.content }</td></tr>
+							<tr><td>${pictureVo.season }</td></tr>
+							<tr><td>${pictureVo.weather }</td></tr>
+							<tr><td>${pictureVo.location}</td></tr>
+							<tr><td>${pictureVo.time }</td></tr>
+							<tr><td class="likeBtn">좋아요<img src="/weather/assets/images/user.png" style="width:10px;">${pictureVo.likes }</td></tr>
 							</table>
 						</div>
 						<!-- modal -->
@@ -110,14 +148,13 @@ li{
 						<div class="remain like">
 							<input type="hidden" value="${pictureVo.no }">
 							<table class="view-table">
-							<tr><td>title</td><td>${pictureVo.title }</td></tr>
-							<tr><td>writer</td><td>${pictureVo.email }</td></tr>
-							<tr><td>content</td><td>${pictureVo.content }</td></tr>
-							<tr><td>season</td><td>${pictureVo.season }</td></tr>
-							<tr><td>weather</td><td>${pictureVo.weather }</td></tr>
-							<tr><td>location</td><td>${pictureVo.location}</td></tr>
-							<tr><td>time</td><td>${pictureVo.time }</td></tr>
-							<tr><td>likes</td><td>${pictureVo.likes }</td></tr>
+							<tr><td>${pictureVo.email }</td></tr>
+							<tr><td>${pictureVo.content }</td></tr>
+							<tr><td>${pictureVo.season }</td></tr>
+							<tr><td>${pictureVo.weather }</td></tr>
+							<tr><td>${pictureVo.location}</td></tr>
+							<tr><td>${pictureVo.time }</td></tr>
+							<tr><td>좋아요<img src="/weather/assets/images/user.png" style="width:10px;">${pictureVo.likes }</td></tr>
 							</table>
 						</div>
 						<!-- modal -->
