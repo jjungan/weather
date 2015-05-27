@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="weather">
+	<typeAlias alias="WeatherVo" type="com.sds.icto.weather.domain.WeatherVo" />
+	
+	<insert id="insert" parameterClass="WeatherVo">
+		<![CDATA[
+			insert into weather
+			values(weather_no_seq.nextval, #email#, #x#, #y#, #address#, #climate#, #temp#, #time#)
+		]]> 
+	</insert>
+	
+	<update id="update" parameterClass="WeatherVo" >
+		<![CDATA[
+			update weather 
+			set x=#x#, y=#y#, address=#address#, climate=#climate#, temp=#temp#, time=#time# 
+			where email=#email#
+		]]> 
+	</update>
+	
+	<select id="selectByEmail" parameterClass="String" resultClass="WeatherVo">
+		<![CDATA[
+			select * from weather where email = #email# 
+		]]> 
+	</select>	
+	
+
+
+</sqlMap>

@@ -9,5 +9,6 @@
 		
 	<!-- sql mapping fiels -->
 	<sqlMap resource="sql/member.xml" />
+	<sqlMap resource="sql/weather.xml" />
 
 </sqlMapConfig>
