@@ -52,7 +52,6 @@ public class PictureController {
 	
 	@RequestMapping(value="/insert", method=RequestMethod.POST)
 	public String insert(@ModelAttribute PictureVo vo, @RequestParam("file")MultipartFile file, HttpSession session){
-		System.out.println("vo1 : "+ vo);
         String fileOriginalName = file.getOriginalFilename();
         String extName = fileOriginalName.substring( fileOriginalName.lastIndexOf(".") + 1, fileOriginalName.length() );
         String fileName = file.getName();
@@ -78,7 +77,6 @@ public class PictureController {
         MemberVo m = (MemberVo)session.getAttribute("authMember");
         WeatherVo w = (WeatherVo)session.getAttribute("weather");
         vo.setEmail(m.getEmail());
-        System.out.println("weather : "+w);
         vo.setLocation(w.getAddress());
         pictureService.add(vo);
         
