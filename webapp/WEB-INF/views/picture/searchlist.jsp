@@ -20,10 +20,18 @@
 	width:284px;
 	height:213px;
 }
-li{
+.remain-li{
 	float:left;
+	margin:0;
+	width:284px;
+	height:213px;
 }
-
+.first-li{
+	float:left;
+	margin:0;
+	width:568px;
+	height:426px;
+}
 .modal-image{
 	width:568px;
 	height:426px;
@@ -50,16 +58,16 @@ li{
 <script type="text/javascript">
 	$(document).ready(function(){
 		/*이미지 마우스오버시 메뉴*/
-		$(".like").hide();
-		$(".modal-target").hide();
+		$(".like").css("display","none");
+		$(".modal-target").css("display","none");
 		$("img.first, img.remain").mouseover(function(){
-			$(this).hide();
-			$(this).next().show();
+			$(this).css("display","none");
+			$(this).next().css("display","inline-block");
 		})
 		
 		$("div.first.like, div.remain.like").mouseout(function(){
-			$(this).hide();
-			$(this).prev().show();
+			$(this).css("display","none");
+			$(this).prev().css("display","inline-block");
 		})
 		/*이미지 뷰어 bpopup*/
 		$(".like").click(function(){
@@ -113,7 +121,7 @@ li{
 					<c:forEach items="${list }" var="pictureVo" varStatus="status">
 					<c:choose>
 					<c:when test="${status.index == '0' }">
-					<li>
+					<li class="first-li">
 						<img class="first" src="/weather/assets/images/tempimages/${pictureVo.image }">
 						<div class="first like">
 							<input type="hidden" value="${pictureVo.no }">
@@ -134,7 +142,7 @@ li{
 					</li>
 					</c:when>
 					<c:otherwise>
-					<li>
+					<li class="remain-li">
 						<img class="remain" src="/weather/assets/images/tempimages/${pictureVo.image }">
 						<div class="remain like">
 							<input type="hidden" value="${pictureVo.no }">

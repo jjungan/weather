@@ -98,8 +98,7 @@
 		/*검색버튼*/
 		$("#searchbtn").click(function(){
 			var keyword=$("#searchform").val();
-			location.href="/weather/picture/search?keyword="+keyword;
-			
+			location.href="/weather/picture/search?keyword="+encodeURIComponent(keyword);
 			/* $.ajax({
 				method: "POST",
 				url: "/weather/picture/search",
