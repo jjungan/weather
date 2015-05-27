@@ -3,12 +3,23 @@
 	<h1><a href="/weather/index">HOW'S THE WEATHER TODAY?</a></h1>
 	<ul>
 		<li class="left">오늘의 날씨</li>
-		<li class="left">
-			<c:if test="">
-			</c:if>
-			<img src="/weather/assets/images/user.png" style="width:20px; margin-left:5px;"></li>
+		<c:if test="${sessionScope.weather == '맑음' }">
+		<li class="left"><img src="/weather/assets/images/user.png" style="width:20px; margin-left:5px;"></li>
+		</c:if>
+		<c:if test="${sessionScope.weather == '구름 조금' }">
+		<li class="left"><img src="/weather/assets/images/user.png" style="width:20px; margin-left:5px;"></li>
+		</c:if>
 		<li class="left"><a href="/weather/picture/list">전체하늘</a></li>
 		<li class="left"><a href="/weather/picture/mylist">내하늘</a></li>
+		
+		<c:if test="${param.type == 'picture' }">
+			<li class="left">
+				<input id="searchform" name="searchform" type="text" placeholder="검색하세요">
+			</li>
+			<li class="left">
+				<img id="searchbtn" src="/weather/assets/images/user.png" style="width:20px; margin-left:5px;">
+			</li>
+		</c:if>
 	
 		<c:choose>
 		<c:when test="${empty sessionScope.authMember }">
