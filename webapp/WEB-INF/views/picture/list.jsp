@@ -86,10 +86,7 @@
 		
 		/*이미지 뷰어 bpopup*/
 		$(".viewBtn").click(function(){
-			/* console.log($(this).children().val());
-			$("#view-image"+no).dialog(); */
 			var no=$(this).prev().prev().children().val();
-			console.log(no);
 			$("#view-image"+no).bPopup();
 		})
 		

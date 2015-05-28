@@ -93,18 +93,14 @@
 		
 		/*이미지 뷰어 bpopup*/
 		$(".viewBtn").click(function(){
-			/* console.log($(this).children().val());
-			$("#view-image"+no).dialog(); */
 			var no=$(this).prev().prev().children().val();
 			$("#view-image"+no).bPopup();
 		})
 		
 		/*좋아요 누르기*/
 		$(".likeBtn").click(function(){
-			console.log($(this));
 			var $this=$(this);
 			var no=$(this).prev().children().val();
-			console.log(no);
 			$.ajax({
 				method: "POST",
 				url: "/weather/picture/like",
