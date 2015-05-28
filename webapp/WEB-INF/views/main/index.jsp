@@ -113,7 +113,7 @@
 	function getWeather(){
 		$.ajax({
 			type: "GET",
-			url: "test_proxy.jsp?sourceX="+sourceX+"&sourceY"+sourceY,
+			url: "weather_proxy.jsp?sourceX="+sourceX+"&sourceY"+sourceY,
 			success: function(response){
 				console.log(response);
 				hour=new Date().getHours();
