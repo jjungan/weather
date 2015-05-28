@@ -123,7 +123,7 @@ function setHashtag(arr){
 					<table id="insert-table">
 						<tr>
 							<td colspan="2" rowspan="8" id="picture-td">
-						        <img id="preview" src="/weather/assets/images/placeholder.gif" alt="your image" />
+						        <img id="preview" src="/weather/assets/images/placeholder.png" alt="your image" />
 							</td>
 							<td colspan="2" id="weather-td" class="question">오늘의 날씨는?</td>
 						</tr>

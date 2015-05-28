@@ -160,7 +160,7 @@
 					</c:choose>
 					</c:forEach>
 					<li id="addimage-li">
-						<img id="addimage" src="/weather/assets/images/placeholder.gif">
+						<img id="addimage" src="/weather/assets/images/placeholder.png">
 					</li>
 					</ul>
 				</div>
