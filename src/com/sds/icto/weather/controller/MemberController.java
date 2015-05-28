@@ -36,11 +36,13 @@ public class MemberController {
 		return "member/joinsuccess";
 	}
 	
+	/* loginform으로 가는 메서드 */
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public String loginForm(){
 		return "member/login";
 	}
-
+	
+	/* login 메서드 */
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	public String login(@ModelAttribute MemberVo vo, HttpSession session){
 		MemberVo member = memberService.authMember(vo);
@@ -50,7 +52,8 @@ public class MemberController {
 		session.setAttribute("authMember", member);
 		return "redirect:/index";
 	}
-
+	
+	/* logout 메서드 */
 	@RequestMapping("/logout")
 	public String logout(HttpSession session){
 		session.removeAttribute("authMember");
@@ -58,6 +61,7 @@ public class MemberController {
 		return "redirect:/index";
 	}
 	
+	/* email 중복체크 메서드 */
 	@RequestMapping(value="/checkemail", method=RequestMethod.POST)
 	@ResponseBody
 	public Map<String, Object> checkEmail(MemberVo vo){
@@ -73,11 +77,13 @@ public class MemberController {
 		return map;
 	}
 	
+	/* myinfo로 가는 메서드 */
 	@RequestMapping(value="/myinfo", method=RequestMethod.GET)
 	public String update(){
 		return "member/myinfo";
 	}
 	
+	/* 회원정보 수정하는 메서드 */
 	@RequestMapping(value="/myinfo", method=RequestMethod.POST)
 	public String update(MemberVo vo, HttpSession session){
 		MemberVo authMember = (MemberVo)session.getAttribute("authMember");

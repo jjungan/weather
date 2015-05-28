@@ -2,8 +2,6 @@ package com.sds.icto.weather.service;
 
 import java.util.List;
 
-import oracle.net.aso.p;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

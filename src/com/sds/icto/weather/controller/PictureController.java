@@ -22,12 +22,13 @@ import com.sds.icto.weather.domain.WeatherVo;
 import com.sds.icto.weather.service.PictureService;
 
 @Controller
-@RequestMapping("picture")
+@RequestMapping("/picture")
 public class PictureController {
 	
 	@Autowired
 	PictureService pictureService;
 	
+	/* 사진전체리스트 보여주는 메서드 */
 	@RequestMapping("/list")
 	public String list(Model model){
 		List<PictureVo> list=pictureService.getList();
@@ -35,6 +36,7 @@ public class PictureController {
 		return "picture/list";
 	}
 	
+	/* 내가 올린 사진리스트 보여주는 메서드 */
 	@RequestMapping("/mylist")
 	public String mylist(Model model, HttpSession session){
 		MemberVo member=(MemberVo)session.getAttribute("authMember");
@@ -43,7 +45,7 @@ public class PictureController {
 		return "picture/mylist";
 	}
 	
-	/*update likes*/
+	/* 좋아요 누르면 업데이트되는 메서드 */
 	@RequestMapping("/like")
 	@ResponseBody
 	public PictureVo like(@RequestParam long no){
@@ -52,20 +54,21 @@ public class PictureController {
 		return picture;
 	}
 	
+	/* content내용 검색하는 메서드 */
 	@RequestMapping(value="/search", method=RequestMethod.GET)
 	public String search(@RequestParam String keyword, Model model){
-		System.out.println(keyword);
 		List<PictureVo> list=pictureService.searchByKeyword(keyword);
-		System.out.println(list);
 		model.addAttribute("list", list);
 		return "picture/searchlist";
 	}
 	
+	/* 사진 insertform으로 가는 메서드 */
 	@RequestMapping(value="/insert", method=RequestMethod.GET)
 	public String insertForm(){
 		return "picture/insert";
 	}
 	
+	/* 사진 insert하는 메서드 */
 	@RequestMapping(value="/insert", method=RequestMethod.POST)
 	public String insert(@ModelAttribute PictureVo vo, @RequestParam("file")MultipartFile file, HttpSession session){
         String fileOriginalName = file.getOriginalFilename();
@@ -98,7 +101,8 @@ public class PictureController {
         
 		return "redirect:/picture/list";
 	}
-
+	
+	/* 경로에 파일을 쓰는 메서드 */
 	private void writeFile( MultipartFile file, String path, String fileName ) {
 		FileOutputStream fos = null;
 		try {

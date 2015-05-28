@@ -19,6 +19,7 @@ public class WeatherController {
 	@Autowired
 	WeatherService weatherService;
 	
+	/* 날씨정보 insert하는 메서드 */
 	@RequestMapping(value="/insert", method=RequestMethod.POST)
 	@ResponseBody
 	public WeatherVo insert(WeatherVo vo, HttpSession session){
