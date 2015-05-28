@@ -40,6 +40,6 @@ insert into picture
 values(picture_no_seq.nextval, '123', null, '201542744430374.jpg', '#해 #여름 #낮 #서울하늘', 
 '낮', '여름', '해', null, sysdate, 0);
 
-delete from picture;
+delete from picture where no=21;
 commit;
 select * from picture;
