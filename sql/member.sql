@@ -12,11 +12,9 @@ CREATE TABLE  "MEMBER"
 	 CONSTRAINT "MEMBER_PK" PRIMARY KEY ("EMAIL") ENABLE
    );
 
+
+insert into member 
+values('test@test.test', 'test', '테스트', 'female', null);
+
 commit;
-SELECT * FROM MEMBER;
-
-			insert into member 
-			values('jung', 'jung', 'jung', 'female', null);
-
-select * from member where email = 'jj'
 
