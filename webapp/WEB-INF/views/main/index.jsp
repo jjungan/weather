@@ -133,9 +133,9 @@
 				var src = '/weather/assets/images/weather_icon/';
 				if(wfKor.indexOf('맑음') != -1){
 					src += 'sunny.png'; 
-				}else if(wfKor.indexOf('구름조금') != -1){
+				}else if(wfKor.indexOf('구름 조금') != -1){
 					src += 'partly_cloudy.png'; 
-				}else if(wfKor.indexOf('구름많음') != -1){
+				}else if(wfKor.indexOf('구름 많음') != -1){
 					src += 'cloudy.png'; 
 				}else if(wfKor.indexOf('비') != -1){
 					src += 'rain.png'; 

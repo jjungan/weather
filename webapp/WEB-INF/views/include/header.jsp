@@ -7,10 +7,10 @@
 		<c:if test="${fn:contains(sessionScope.weather.climate, '맑음') }">
 		<li class="left"><img src="/weather/assets/images/weather_icon/sunny.png" style="width:20px; margin-left:5px;"></li>
 		</c:if>
-		<c:if test="${fn:contains(sessionScope.weather.climate, '구름조금') }">
+		<c:if test="${fn:contains(sessionScope.weather.climate, '구름 조금') }">
 		<li class="left"><img src="/weather/assets/images/weather_icon/partly_cloudy.png" style="width:20px; margin-left:5px;"></li>
 		</c:if>
-		<c:if test="${fn:contains(sessionScope.weather.climate, '구름많음') }">
+		<c:if test="${fn:contains(sessionScope.weather.climate, '구름 많음') }">
 		<li class="left"><img src="/weather/assets/images/weather_icon/cloudy.png" style="width:20px; margin-left:5px;"></li>
 		</c:if>
 		<c:if test="${fn:contains(sessionScope.weather.climate, '비') }">
