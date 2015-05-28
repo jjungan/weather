@@ -53,6 +53,27 @@
 	border-radius: 10px;
 	display:none;
 }
+.first .view-table{
+	margin:150px auto;
+	text-align:center;
+	font-style: italic;
+}
+.remain .view-table{
+	margin:50px auto;
+	text-align:center;
+	font-style: italic;
+}
+.view-table .picture-content{
+	font-weight: bold;
+	font-size: 1.4em;
+	line-height: 40px;
+	vertical-align: top;
+}
+
+.inner-view-table{
+	margin:0 auto;
+	margin-top: 15px;
+}
 </style>
 <script type="text/javascript" src="/weather/assets/jquery/jquery-1.9.0.js"></script>
 <script type="text/javascript">
@@ -74,7 +95,7 @@
 		$(".viewBtn").click(function(){
 			/* console.log($(this).children().val());
 			$("#view-image"+no).dialog(); */
-			var no=$(this).parent().parent().prev().val();
+			var no=$(this).prev().prev().children().val();
 			$("#view-image"+no).bPopup();
 		})
 		
@@ -82,7 +103,7 @@
 		$(".likeBtn").click(function(){
 			console.log($(this));
 			var $this=$(this);
-			var no=$(this).parent().parent().prev().val();
+			var no=$(this).prev().children().val();
 			console.log(no);
 			$.ajax({
 				method: "POST",
@@ -135,15 +156,20 @@
 						<div class="first like">
 							<input type="hidden" value="${pictureVo.no }">
 							<table class="view-table">
-							<tr><td>${pictureVo.email }</td></tr>
-							<tr><td>${pictureVo.content }</td></tr>
-							<tr><td>${pictureVo.location}</td></tr>
-							<tr class="likeBtn">
-									<td>좋아요<img src="/weather/assets/images/heart_empty.png" style="width:10px;">
-									<span id="likesCnt${pictureVo.no }">${pictureVo.likes }</span></td>
-							</tr>
-							<tr class="viewBtn"><td>크게보기<img src="/weather/assets/images/search.png" style="width:10px;"></td></tr>
-							</table>
+							<tr class="picture-content"><td>${pictureVo.content }</td></tr>
+							<tr class="picture-location"><td>${pictureVo.location}</td></tr>
+							<tr class="picture-email"><td>picture by ${pictureVo.email }</td></tr>
+							<tr><td>
+								<table class="inner-view-table">
+								<tr>
+									<td><input type="hidden" value="${pictureVo.no }"></td>
+									<td class="likeBtn">좋아요&nbsp;<img src="/weather/assets/images/heart_empty.png" style="width:10px;">
+									<span id="likesCnt${pictureVo.no }">${pictureVo.likes }&nbsp;&nbsp;</span></td>
+									<td class="viewBtn">크게보기&nbsp;<img src="/weather/assets/images/view.png" style="width:10px;"></td>
+								</tr>
+								</table>
+							</td></tr>
+							</table>	
 						</div>
 						<!-- bpopup -->
 						<div class="place_popup" id="view-image${pictureVo.no }" title="Basic dialog">
@@ -157,14 +183,19 @@
 						<div class="remain like">
 							<input type="hidden" value="${pictureVo.no }">
 							<table class="view-table">
-							<tr><td>${pictureVo.email }</td></tr>
-							<tr><td>${pictureVo.content }</td></tr>
-							<tr><td>${pictureVo.location}</td></tr>
-							<tr class="likeBtn">
-									<td>좋아요<img src="/weather/assets/images/heart_empty.png" style="width:10px;">
-									<span id="likesCnt${pictureVo.no }">${pictureVo.likes }</span></td>
-							</tr>
-							<tr class="viewBtn"><td>크게보기<img src="/weather/assets/images/search.png" style="width:10px;"></td></tr>
+							<tr class="picture-content"><td>${pictureVo.content }</td></tr>
+							<tr class="picture-location"><td>${pictureVo.location}</td></tr>
+							<tr class="picture-email"><td>picture by ${pictureVo.email }</td></tr>
+							<tr><td>
+								<table class="inner-view-table">
+								<tr>
+									<td><input type="hidden" value="${pictureVo.no }"></td>
+									<td class="likeBtn">좋아요&nbsp;<img src="/weather/assets/images/heart_empty.png" style="width:10px;">
+									<span id="likesCnt${pictureVo.no }">${pictureVo.likes }&nbsp;&nbsp;</span></td>
+									<td class="viewBtn">크게보기&nbsp;<img src="/weather/assets/images/view.png" style="width:10px;"></td>
+								</tr>
+								</table>
+							</td></tr>
 							</table>
 						</div>
 						<!-- bpopup -->
