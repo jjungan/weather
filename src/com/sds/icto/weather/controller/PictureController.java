@@ -34,6 +34,14 @@ public class PictureController {
 		return "picture/list";
 	}
 	
+	@RequestMapping("/mylist")
+	public String mylist(Model model, HttpSession session){
+		MemberVo member=(MemberVo)session.getAttribute("authMember");
+		List<PictureVo> list=pictureService.getMyList(member.getEmail());
+		model.addAttribute("list", list);
+		return "picture/mylist";
+	}
+	
 	/*update likes*/
 	
 	@RequestMapping(value="/search", method=RequestMethod.GET)

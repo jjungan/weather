@@ -16,6 +16,9 @@
 		<c:if test="${fn:contains(sessionScope.weather.climate, '비') }">
 		<li class="left"><img src="/weather/assets/images/weather_icon/rain.png" style="width:20px; margin-left:5px;"></li>
 		</c:if>
+		<c:if test="${fn:contains(sessionScope.weather.climate, '눈') }">
+		<li class="left"><img src="/weather/assets/images/weather_icon/rain.png" style="width:20px; margin-left:5px;"></li>
+		</c:if>
 		<li class="left"><a href="/weather/picture/list">전체하늘</a></li>
 		<li class="left"><a href="/weather/picture/mylist">내하늘</a></li>
 		
@@ -37,7 +40,12 @@
 			<li class="right"><a href="/weather/member/myinfo">회원정보수정</a><li>
 			<li class="right"><a href="/weather/member/logout">로그아웃</a><li>
 			<li class="right">${sessionScope.authMember.name }(${sessionScope.authMember.email })님 환영합니다</li>
-			<li class="right"><img id="profile" src="/weather/assets/images/user.png"></li>
+			<c:if test="${sessionScope.authMember.gender == 'male' }">
+			<li class="right"><img id="profile" src="/weather/assets/images/user_boy.png"></li>
+			</c:if>
+			<c:if test="${sessionScope.authMember.gender == 'female' }">
+			<li class="right"><img id="profile" src="/weather/assets/images/user_girl.png"></li>
+			</c:if>
 		</c:otherwise>
 		</c:choose>
 	</ul>

@@ -7,6 +7,16 @@
 <title>weather</title>
 <link href="/weather/assets/css/main.css" rel="stylesheet" type="text/css">
 <style type="text/css">
+#addimage-li{
+	float:left;
+	margin:0;
+	width:284px;
+	height:213px;
+}
+#addimage{
+	width:284px;
+	height:213px;
+}
 .like{
 	background-color: #777;
 	color:#fff;
@@ -43,18 +53,8 @@
 	border-radius: 10px;
 	display:none;
 }
-/* .like{
-	text-align:center;
-}
-.view-table{
-	text-align:center;
-	padding: 50px;
-	font-style: italic;
-} */
 </style>
 <script type="text/javascript" src="/weather/assets/jquery/jquery-1.9.0.js"></script>
-
-
 <script type="text/javascript">
 	$(document).ready(function(){
 		/*이미지 마우스오버시 메뉴*/
@@ -71,8 +71,6 @@
 		})
 		/*이미지 뷰어 bpopup*/
 		$(".like").click(function(){
-			/* console.log($(this).children().val());
-			$("#view-image"+no).dialog(); */
 			var no=$(this).children().val();
 			$("#view-image"+no).bPopup();
 		})
@@ -99,6 +97,10 @@
 		$("#searchbtn").click(function(){
 			var keyword=$("#searchform").val();
 			location.href="/weather/picture/search?keyword="+encodeURIComponent(keyword);
+		})
+		/*사진인서트페이지로이동*/
+		$("#addimage").click(function(){
+			location.href="/weather/picture/insert";			
 		})
 	})
 
@@ -131,7 +133,7 @@
 							<tr><td class="likeBtn">좋아요<img src="/weather/assets/images/user.png" style="width:10px;">${pictureVo.likes }</td></tr>
 							</table>
 						</div>
-						<!-- modal -->
+						<!-- bpopup -->
 						<div class="place_popup" id="view-image${pictureVo.no }" title="Basic dialog">
 							<img class="modal-image" src="/weather/image/${pictureVo.image }">
 						</div>
@@ -149,7 +151,7 @@
 							<tr><td>좋아요<img src="/weather/assets/images/user.png" style="width:10px;">${pictureVo.likes }</td></tr>
 							</table>
 						</div>
-						<!-- modal -->
+						<!-- bpopup -->
 						<div class="place_popup" id="view-image${pictureVo.no }" title="Basic dialog">
 							<img class="modal-image" src="/weather/image/${pictureVo.image }">
 						</div>
@@ -157,6 +159,9 @@
 					</c:otherwise>
 					</c:choose>
 					</c:forEach>
+					<li id="addimage-li">
+						<img id="addimage" src="/weather/assets/images/placeholder.gif">
+					</li>
 					</ul>
 				</div>
 				

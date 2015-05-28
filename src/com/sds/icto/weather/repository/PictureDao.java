@@ -23,5 +23,9 @@ public class PictureDao {
 	public List<PictureVo> selectByKeyword(String keyword) {
 		return sqlMapClientTemplate.queryForList("picture.selectByKeyword", keyword);
 	}
+	public List<PictureVo> selectMyList(String email){
+		return sqlMapClientTemplate.queryForList("picture.selectMyList", email);
+	}
+	
 
 }

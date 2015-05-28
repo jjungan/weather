@@ -23,5 +23,8 @@ public class PictureService {
 	public List<PictureVo> searchByKeyword(String keyword) {
 		return pictureDao.selectByKeyword(keyword);
 	}
+	public List<PictureVo> getMyList(String email){
+		return pictureDao.selectMyList(email);
+	}
 
 }
