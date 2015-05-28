@@ -69,24 +69,30 @@
 			$(this).css("display","none");
 			$(this).prev().css("display","inline-block");
 		})
+		
 		/*이미지 뷰어 bpopup*/
-		$(".like").click(function(){
+		$(".viewBtn").click(function(){
 			/* console.log($(this).children().val());
 			$("#view-image"+no).dialog(); */
-			var no=$(this).children().val();
+			var no=$(this).parent().parent().prev().val();
 			$("#view-image"+no).bPopup();
 		})
 		
 		/*좋아요 누르기*/
 		$(".likeBtn").click(function(){
+			console.log($(this));
+			var $this=$(this);
+			var no=$(this).parent().parent().prev().val();
+			console.log(no);
 			$.ajax({
 				method: "POST",
 				url: "/weather/picture/like",
-				data: {
-					
-					},
+				data: {"no":no},
 				success: function(response){
-					console.log("인서트성공");
+					console.log(response);
+					$("#likesCnt"+no).text(response.likes);
+					$("#likesCnt"+no).prev().attr("src", "/weather/assets/images/heart_white.png");
+					$($this).unbind("click");
 				},
 				error: function(){
 					alert("error");
@@ -128,7 +134,11 @@
 							<tr><td>${pictureVo.email }</td></tr>
 							<tr><td>${pictureVo.content }</td></tr>
 							<tr><td>${pictureVo.location}</td></tr>
-							<tr><td class="likeBtn">좋아요<img src="/weather/assets/images/user.png" style="width:10px;">${pictureVo.likes }</td></tr>
+							<tr class="likeBtn">
+									<td>좋아요<img src="/weather/assets/images/heart_empty.png" style="width:10px;">
+									<span id="likesCnt${pictureVo.no }">${pictureVo.likes }</span></td>
+							</tr>
+							<tr class="viewBtn"><td>크게보기<img src="/weather/assets/images/search.png" style="width:10px;"></td></tr>
 							</table>
 						</div>
 						<!-- modal -->
@@ -146,7 +156,11 @@
 							<tr><td>${pictureVo.email }</td></tr>
 							<tr><td>${pictureVo.content }</td></tr>
 							<tr><td>${pictureVo.location}</td></tr>
-							<tr><td>좋아요<img src="/weather/assets/images/user.png" style="width:10px;">${pictureVo.likes }</td></tr>
+							<tr class="likeBtn">
+									<td>좋아요<img src="/weather/assets/images/heart_empty.png" style="width:10px;">
+									<span id="likesCnt${pictureVo.no }">${pictureVo.likes }</span></td>
+							</tr>
+							<tr class="viewBtn"><td>크게보기<img src="/weather/assets/images/search.png" style="width:10px;"></td></tr>
 							</table>
 						</div>
 						<!-- modal -->

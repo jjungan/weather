@@ -2,6 +2,8 @@ package com.sds.icto.weather.service;
 
 import java.util.List;
 
+import oracle.net.aso.p;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +27,12 @@ public class PictureService {
 	}
 	public List<PictureVo> getMyList(String email){
 		return pictureDao.selectMyList(email);
+	}
+	public void modifyLike(long no){
+		pictureDao.updateLike(no);
+	}
+	public PictureVo getOnePicture(long no) {
+		return pictureDao.selectOnePicture(no);
 	}
 
 }

@@ -15,6 +15,12 @@
 		]]> 
 	</select>
 
+	<select id="selectOne" resultClass="PictureVo" parameterClass="Long">
+		<![CDATA[
+			select * from picture where no=#no#
+		]]> 
+	</select>
+
 	<insert id="insert" parameterClass="PictureVo">
 		<![CDATA[
 			insert into picture
@@ -25,9 +31,9 @@
 		]]> 	
 	</insert>
 	
-	<update id="updateLike" parameterClass="PictureVo">
+	<update id="updateLike" parameterClass="Long">
 		<![CDATA[
-			update picture set like=like + 1 where no=#no#
+			update picture set likes=likes + 1 where no=#no#
 		]]> 
 	</update>
 	

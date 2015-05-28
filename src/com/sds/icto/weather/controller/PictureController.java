@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.sds.icto.weather.domain.MemberVo;
@@ -43,6 +44,13 @@ public class PictureController {
 	}
 	
 	/*update likes*/
+	@RequestMapping("/like")
+	@ResponseBody
+	public PictureVo like(@RequestParam long no){
+		pictureService.modifyLike(no);
+		PictureVo picture=pictureService.getOnePicture(no);
+		return picture;
+	}
 	
 	@RequestMapping(value="/search", method=RequestMethod.GET)
 	public String search(@RequestParam String keyword, Model model){

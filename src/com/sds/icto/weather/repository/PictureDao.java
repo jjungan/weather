@@ -26,6 +26,11 @@ public class PictureDao {
 	public List<PictureVo> selectMyList(String email){
 		return sqlMapClientTemplate.queryForList("picture.selectMyList", email);
 	}
-	
+	public void updateLike(long no){
+		sqlMapClientTemplate.update("picture.updateLike", no);
+	}
+	public PictureVo selectOnePicture(long no) {
+		return (PictureVo) sqlMapClientTemplate.queryForObject("picture.selectOne", no);
+	}
 
 }
