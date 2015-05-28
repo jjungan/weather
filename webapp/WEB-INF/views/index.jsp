@@ -1,13 +1,39 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <!doctype html>
 <html>
 <head>
 <title>weather</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link href="/weather/assets/css/main.css" rel="stylesheet" type="text/css">
-<script type="text/javascript"	src="/weather/assets/jquery/jquery-1.9.0.js"></script>
+<style type="text/css">
+	#site-introduction{
+		width: 90%;
+		margin: 0 auto;
+		text-align: center;
+	}
+	#login-introduction{
+		margin-top: 50px;
+		height: 50px;
+		color: #777;
+	}
+	#weather{
+		height: 150px;
+	}
+	#weather-icon{
+		height: 200px;
+	}
+	#description{
+		height: 100px;
+		font-size: 1.2em;
+		color: #777;
+	}
+	span span#title{
+		font-size: 1.4em;
+	}
+	
+</style>
+<script type="text/javascript" src="/weather/assets/jquery/jquery-1.9.0.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <script type="text/javascript">
 	var sourceX;
@@ -97,7 +123,22 @@
 					}
 				})
 				
-				$("#weather").append("<h2>현재 시간 "+hour+"시 "+min+"분<br> "+myAddress+"의 날씨는 "+wfKor+"</h2>");
+				$("#weather").append("<h1>현재 시간 "+hour+"시 "+min+"분<br> "+myAddress+"의 날씨는 "+wfKor+"</h1>");
+				
+				/* 오늘 날씨에 맞는 이미지 넣기 */
+				var src = '/weather/assets/images/weather_icon/';
+				if(wfKor.indexOf('맑음') != -1){
+					src += 'sunny.png'; 
+				}else if(wfKor.indexOf('구름조금') != -1){
+					src += 'partly_cloudy.png'; 
+				}else if(wfKor.indexOf('구름많음') != -1){
+					src += 'cloudy.png'; 
+				}else if(wfKor.indexOf('비') != -1){
+					src += 'rain.png'; 
+				}else if(wfKor.indexOf('눈') != -1){
+					src += 'cloudy.png'; 
+				}
+				$("#weather-icon").append("<img src='"+src+"'>");
 				
 				/* 로그인 했을때만 DB에 날씨 인서트 or 업데이트 */
 				if('${sessionScope.authMember}' != ''){
@@ -124,7 +165,7 @@
 				"temp": temp
 				},
 			success: function(response){
-				console.log("인서트성공");
+				console.log("인서트/업데이트 성공");
 			},
 			error: function(){
 				alert("error");
@@ -142,16 +183,29 @@
 		<div id="wrapper">
 			<div id="content">
 				<div id="site-introduction">
-					<c:if test="${!empty sessionScope.authMember.name }">
-					<h2>안녕하세요.  
-					${sessionScope.authMember.name }의  MYSITE에 오신 것을 환영합니다.</h2>
-					</c:if>
-					<c:if test="${empty sessionScope.authMember.name }">
-					<h2>안녕하세요. MYSITE에 오신 것을 환영합니다.</h2>
-					</c:if>
-					<div id="weather">
+					<div id="login-introduction">
+						<c:if test="${!empty sessionScope.authMember.name }">
+							<span>
+							안녕하세요 ${sessionScope.authMember.name }님, 방문을 환영합니다.
+							</span>
+						</c:if>
+						<c:if test="${empty sessionScope.authMember.name }">
+							<span>
+							로그인 하시면 더욱 다양한 서비스를 이용할 수 있습니다.
+							</span>
+						</c:if>
 					</div>
-					
+					<div id="weather"></div>
+					<div id="weather-icon"></div>
+					<div id="description">
+						<span>
+							<span id="title">HOW’S THE WEATHER TODAY</span>는<br>
+							여러분의 바쁜 일상 속 여유를 찾아드리기 위한 사이트 입니다.<br> 
+							여러분이 사는 곳의 하늘을 사진으로 찍어보세요. <br>
+							다른 사람들이 올린 다양한 사진을 감상 할 수도 있습니다.
+						</span>
+					</div>
+
 				</div>
 			</div>
 		</div>
