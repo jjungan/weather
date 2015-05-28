@@ -99,7 +99,6 @@
 		$("#searchbtn").click(function(){
 			var keyword=$("#searchform").val();
 			location.href="/weather/picture/search?keyword="+keyword;
-			
 		})
 	})
 

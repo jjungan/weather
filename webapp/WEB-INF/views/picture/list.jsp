@@ -99,18 +99,6 @@
 		$("#searchbtn").click(function(){
 			var keyword=$("#searchform").val();
 			location.href="/weather/picture/search?keyword="+encodeURIComponent(keyword);
-			/* $.ajax({
-				method: "POST",
-				url: "/weather/picture/search",
-				data: keyword,
-				success: function(response){
-					console.log("인서트성공");
-				},
-				error: function(){
-					alert("error");
-					return;
-				}
-			}); */
 		})
 	})
 

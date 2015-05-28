@@ -1,13 +1,20 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 	<h1><a href="/weather/index">HOW'S THE WEATHER TODAY?</a></h1>
 	<ul>
 		<li class="left">오늘의 날씨</li>
-		<c:if test="${sessionScope.weather == '맑음' }">
-		<li class="left"><img src="/weather/assets/images/user.png" style="width:20px; margin-left:5px;"></li>
+		<c:if test="${fn:contains(sessionScope.weather.climate, '맑음') }">
+		<li class="left"><img src="/weather/assets/images/weather_icon/sunny.png" style="width:20px; margin-left:5px;"></li>
 		</c:if>
-		<c:if test="${sessionScope.weather == '구름 조금' }">
-		<li class="left"><img src="/weather/assets/images/user.png" style="width:20px; margin-left:5px;"></li>
+		<c:if test="${fn:contains(sessionScope.weather.climate, '구름조금') }">
+		<li class="left"><img src="/weather/assets/images/weather_icon/partly_cloudy.png" style="width:20px; margin-left:5px;"></li>
+		</c:if>
+		<c:if test="${fn:contains(sessionScope.weather.climate, '구름많음') }">
+		<li class="left"><img src="/weather/assets/images/weather_icon/cloudy.png" style="width:20px; margin-left:5px;"></li>
+		</c:if>
+		<c:if test="${fn:contains(sessionScope.weather.climate, '비') }">
+		<li class="left"><img src="/weather/assets/images/weather_icon/rain.png" style="width:20px; margin-left:5px;"></li>
 		</c:if>
 		<li class="left"><a href="/weather/picture/list">전체하늘</a></li>
 		<li class="left"><a href="/weather/picture/mylist">내하늘</a></li>
