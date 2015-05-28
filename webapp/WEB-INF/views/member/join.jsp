@@ -72,26 +72,26 @@
 			<div id="user">
 
 				<form id="join-form" name="joinForm" method="post" action="/weather/member/join">
-					<label class="block-label" for="name">이름*</label>
-					<input id="name" name="name" type="text" autofocus="autofocus">
-
-					<label class="block-label" for="email">이메일*</label>
-					<input id="email" name="email" type="text">
-					<div id="imgs">
-						<img src="/weather/assets/images/o.gif" id="o-img">
-						<img src="/weather/assets/images/x.png" id="x-img">
+					<div id="join-form-input">
+						<label class="block-label" for="name">이름*</label>
+						<input id="name" name="name" type="text" autofocus="autofocus">
+	
+						<label class="block-label" for="email">이메일*</label>
+						<input id="email" name="email" type="text">
+						<div id="imgs">
+							<img src="/weather/assets/images/o.gif" id="o-img">
+							<img src="/weather/assets/images/x.png" id="x-img">
+						</div>
+						
+						<label class="block-label">패스워드*</label>
+						<input name="password" type="password" value="" required="required">
+						
+						<fieldset>
+							<legend>성별</legend>
+							<label>여</label> <input type="radio" name="gender" value="female" checked="checked">
+							<label>남</label> <input type="radio" name="gender" value="male">
+						</fieldset>
 					</div>
-					
-					<label class="block-label">패스워드*</label>
-					<input name="password" type="password" value="" required="required">
-					
-					<fieldset>
-						<legend>성별</legend>
-						<label>여</label> <input type="radio" name="gender" value="female" checked="checked">
-						<label>남</label> <input type="radio" name="gender" value="male">
-					</fieldset>
-
-					
 					<input type="button" id="submitBtn" value="가입하기" class="btn">
 					
 				</form>
