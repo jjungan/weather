@@ -1,4 +1,4 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 	<h1><a href="/weather/index">HOW'S THE WEATHER TODAY?</a></h1>
@@ -23,10 +23,10 @@
 		<li class="left"><a href="/weather/picture/mylist">내하늘</a></li>
 		
 		<c:if test="${param.type == 'picture' }">
-			<li class="left">
+			<li class="left search">
 				<input id="searchform" name="searchform" type="text" placeholder="검색하세요">
 			</li>
-			<li class="left">
+			<li class="left search">
 				<img id="searchbtn" src="/weather/assets/images/search.png" style="width:15px; margin-left:5px;">
 			</li>
 		</c:if>

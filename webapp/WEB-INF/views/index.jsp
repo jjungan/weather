@@ -18,10 +18,14 @@
 		color: #777;
 	}
 	#weather{
-		height: 150px;
+		height: 100px;
+		color: #666;
 	}
 	#weather-icon{
-		height: 200px;
+		height: 250px;
+	}
+	#weather-icon img{
+		width: 200px;
 	}
 	#description{
 		height: 100px;

@@ -20,6 +20,7 @@ div#header	ul li.left			{ float:left }
 div#header	ul li.right			{ float:right }
 div#header	ul li a 		{ display:block; margin-left:10px; text-decoration: none; color:#8EC6F4; }
 div#header #profile     { width:20px; margin-right: 5px;}
+div#header #searchform{ margin-left: 10px; font:1em "맑은 고딕", 돋움, 굴림; } 
 
 /* footer */
 div#footer		{ position:fixed; background:#515151; color: #FFF; margin-top:780px; }
